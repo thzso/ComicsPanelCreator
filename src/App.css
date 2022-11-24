@@ -1,0 +1,267 @@
+@font-face {
+  font-family: 'SequentialistBB';
+  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/306FA6_1_0.woff2') format('woff2'),
+  url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/306FA6_0_0.woff') format('woff');
+  font-style: normal;
+  font-weight: 400;
+  }
+@font-face {
+  font-family: 'SequentialistBB';
+  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/306FA6_0_0.woff2') format('woff2'),
+  url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/306FA6_0_0.woff') format('woff');
+  font-style: italic;
+  font-weight: 400;
+  }
+
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+
+/* :root {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+} */
+
+/* body{
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-image: url("../public/images/desktop_bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+
+*/
+
+
+  .App{
+ 
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 3rem;
+    padding-top: 2rem;
+    /* margin:1rem; */
+    /* font-family: SequentialistBB, cursive; */
+    letter-spacing: 0.2rem;
+  }
+
+  /* .title_svg{
+    align-self: flex-start;
+    display: inline-block;
+  } */
+
+
+  #header--div{
+    display: flex;
+    align-items: center;
+  }
+
+  #span--title{
+    font-size: 2rem;
+  }
+
+  
+
+
+.main{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  flex-wrap: wrap;
+  
+  /* overflow: hidden; */
+}
+.main > div{
+  border: 0.5rem solid rgb(254, 254, 254);
+  border-collapse: collapse;
+  padding: 1rem;
+  /* margin:0.8rem; */
+}
+.select-char-sheet {
+  /* background-image: url("../public/images/desktop_bg.jpg"); */
+  background-color: #000000ab;
+  display: flex;
+  flex-direction: column;
+  gap:2.3rem;
+  justify-content: center;
+  flex-grow: 1;
+  align-items: center;
+}
+
+#selectCharacter--inputTooLong_p{
+  margin:0;
+  padding: 0;
+}
+
+
+button{
+  font-family: SequentialistBB;
+}
+
+
+#imagelist--container{
+  background-color: #050505d4;
+  padding: 1rem;
+}
+
+.imagelist--items  img{
+  border: 0.1rem solid white
+}
+
+
+.container--CharacterCard_main{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  width: 32rem;
+  height: 39rem;
+  position: relative;
+  
+
+}
+
+#p--characterCard_default-id{
+  text-align: center;
+  font-size: 4rem;
+  margin: 0;
+  font-weight: bold;
+  position:absolute;
+  top:0;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 0.1px;
+  -webkit-text-stroke-color: black;
+  filter: drop-shadow(16px 30px 30px #000000) ;
+  z-index: 1;
+}
+
+#p--characterCard_clicked-id{
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  font-size: 5.1rem;
+  margin: 0;
+  font-weight: bold;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 0.1px;
+  -webkit-text-stroke-color: black;
+  filter: drop-shadow(16px 30px 30px #000000) ;
+  z-index: 1;
+}
+
+.container--CharacterCard_main > img{
+  max-width:100%;
+  max-height:100%;
+  object-fit: contain;
+}
+
+#img--characterCard_clicked-id{
+  max-width:90%;
+  max-height:90%;
+  object-fit: contain;
+}
+
+
+
+
+.img--filter_first {
+  filter: drop-shadow(16px 16px 40px #652269) ;
+}
+.img--filter_second {
+  filter: drop-shadow(16px 16px 40px #4dcec8);
+}
+.img--filter_third {
+  filter: drop-shadow(16px 16px 40px #2ebe66) ;
+}
+.img--filter_fourth {
+  filter: drop-shadow(16px 16px 40px #fafd6d) ;
+}
+.img--filter_fifth {
+  filter: none ;
+}
+
+
+
+
+
+#bubble-container {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+.bubble {
+  position: relative;
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  width: 300px;
+  background: #fff;
+  border-radius: 40px;
+  padding: 24px;
+  text-align: center;
+  color: #000;
+  word-wrap: break-word;
+  font-family: SequentialistBB;
+  font-weight: bold;
+}
+
+.bubble-bottom-left:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 24px solid #fff;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #fff;
+  border-bottom: 20px solid transparent;
+  right: 32px;
+  bottom: -24px;
+}
+
+
+
+
+
+/* .container--CharacterCard_main{
+
+  background-color: #2248395c;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  min-width: 364px;
+ 
+} */
+
+  /* background-image: url("../public/images/scenes/cellar.jpg"); */
+   /* height: 552px; */
+
+
+/* .imagelist{
+  display: flex;
+  flex-wrap: wrap;
+} */
+
+
+
+/* Jó ez majd ha nagyon ráérek */
+/* .imageList-item >img:hover {
+  width: 150px;
+  position: absolute;
+  z-index: 1;
+
+} */
+
+
+
+/* szövegbubi */
+
+/* szövegbubi vége */
