@@ -100,7 +100,7 @@ button {
 
 #p--characterCard_default-id {
   text-align: center;
-  font-size: 2rem;
+  font-size: 4rem;
   margin: 0;
   font-weight: bold;
   position: absolute;
@@ -223,9 +223,7 @@ button {
   #imagelist--container {
     max-width: 600px;
   }
-  #p--characterCard_default-id {
-    font-size: 4rem;
-  }
+
   .isReadyMain {
     width: fit-content;
     margin: auto;
