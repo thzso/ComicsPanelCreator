@@ -7,11 +7,11 @@ export default function CharacterCard({
   return (
     <>
       <div
-        className={
+        className={`${filterColorClass} ${
           isReady
             ? "container--CharacterCard_main characterCard_clicked"
             : "container--CharacterCard_main"
-        }
+        }`}
       >
         <p
           id={
@@ -34,7 +34,6 @@ export default function CharacterCard({
 
         {nameOfChar !== "" ? (
           <img
-            className={filterColorClass}
             id={isReady ? "img--characterCard_clicked-id" : ""}
             src={`images/${nameOfChar}.png`}
           />
