@@ -1,12 +1,8 @@
 import TextField from "@mui/material/TextField";
 import { useState } from "react";
 
-export default function MultilineTextField({ getBubbleText }) {
+export default function MultilineTextField({ setContentOfBubble }) {
   const [isToolong, setIsToolong] = useState(false);
-
-  const Sendtext = (text) => {
-    getBubbleText(text);
-  };
 
   return (
     <div>
@@ -17,12 +13,11 @@ export default function MultilineTextField({ getBubbleText }) {
         multiline
         maxRows={8}
         onInput={(e) => {
-          Sendtext(e.target.value);
+         setContentOfBubble(e.target.value);
 
           e.target.value.length === 45
             ? setIsToolong(true)
             : setIsToolong(false);
-          console.log(isToolong);
         }}
         variant="standard"
       />

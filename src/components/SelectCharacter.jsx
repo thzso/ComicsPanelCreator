@@ -1,39 +1,26 @@
-import { useState } from "react";
-import Autocomplete from "@mui/material/Autocomplete";
-import { TextField } from "@mui/material";
 
-export default function SelectCharacter({ options, getNameOfSelectedChar }) {
-  const [inputValue, setInputValue] = useState("Characters");
+import {Select} from "@mui/material";
+import {MenuItem} from "@mui/material";
+import {InputLabel} from "@mui/material";
 
-  const namesArr = options.map((opt) => opt.label);
+export default function SelectCharacter({ setNameOfChar }) {
 
-  const sendName = (newInputValue) => {
-    if (newInputValue !== "") {
-      getNameOfSelectedChar(newInputValue);
-    }
-  };
+  const options = ['Acrok', 'Aome', 'Dechameron', 'Jack', 'Olak', 'Rirke', 'Uon', 'Weapon']
 
   return (
-    <>
-      {inputValue.length > 10 && <p id="selectCharacter--inputTooLong_p">No!</p>}
-      <Autocomplete
-        disablePortal
-        isOptionEqualToValue={(option, value) => option.id === value.id}
-        inputValue={inputValue}
-        id="combo-box-demo"
-        options={options}
-        onInputChange={(event, newInputValue) => {
-          setInputValue(newInputValue);
-          const index = namesArr.indexOf(newInputValue);
-          sendName(newInputValue);
-        }}
-        sx={{ width: "13rem", borderColor: "#ffffff" }}
-        renderInput={(params) => (
-          <TextField {...params}  label="Characters" sx={{ width: "13rem" }} />
-        )}
+    <div>
+    <InputLabel id="selectLabel">Choose Character</InputLabel>
+      <Select
+      defaultValue={""}
+      style={{minWidth: 200}}
+      variant="outlined"
+      labelId="selectLabel"
+      onChange={(e)=>setNameOfChar(e.target.value)}
+      
+      >
+        {options.map(opt => <MenuItem key={opt} value={opt}>{opt}</MenuItem>)}
+      </Select>
 
-        // Ez itt valamiért baj! (controlled to uncontrolled? inputProps={{ maxLength: 12 }}
-      />
-    </>
+    </div>
   );
 }

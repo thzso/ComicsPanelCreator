@@ -1,213 +1,188 @@
 @font-face {
-  font-family: 'SequentialistBB';
-  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/306FA6_1_0.woff2') format('woff2'),
-  url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/306FA6_0_0.woff') format('woff');
+  font-family: "SequentialistBB";
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/306FA6_1_0.woff2")
+      format("woff2"),
+    url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/306FA6_0_0.woff")
+      format("woff");
   font-style: normal;
   font-weight: 400;
-  }
-@font-face {
-  font-family: 'SequentialistBB';
-  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/306FA6_0_0.woff2') format('woff2'),
-  url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/306FA6_0_0.woff') format('woff');
-  font-style: italic;
-  font-weight: 400;
-  }
-
-@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
-
-/* :root {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-} */
-
-/* body{
-
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-image: url("../public/images/desktop_bg.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; 
 }
 
-*/
+@font-face {
+  font-family: "SequentialistBB";
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/306FA6_0_0.woff2")
+      format("woff2"),
+    url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/306FA6_0_0.woff")
+      format("woff");
+  font-style: italic;
+  font-weight: 400;
+}
 
+.App {
+  gap: 3rem;
+  letter-spacing: 0.2rem;
+}
 
-  .App{
- 
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 3rem;
-    padding-top: 2rem;
-    /* margin:1rem; */
-    /* font-family: SequentialistBB, cursive; */
-    letter-spacing: 0.2rem;
-  }
+#header--div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 2rem;
+}
 
-  /* .title_svg{
-    align-self: flex-start;
-    display: inline-block;
-  } */
+.title_svg {
+  width: 320px;
+}
 
-
-  #header--div{
-    display: flex;
-    align-items: center;
-  }
-
-  #span--title{
-    font-size: 2rem;
-  }
-
-  
-
-
-.main{
+.main {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
-  display: flex;
-  flex-wrap: wrap;
-  
-  /* overflow: hidden; */
+  margin: 0.5rem;
 }
-.main > div{
+
+.main > div {
   border: 0.5rem solid rgb(254, 254, 254);
   border-collapse: collapse;
-  padding: 1rem;
-  /* margin:0.8rem; */
 }
+
 .select-char-sheet {
-  /* background-image: url("../public/images/desktop_bg.jpg"); */
   background-color: #000000ab;
   display: flex;
   flex-direction: column;
-  gap:2.3rem;
+  gap: 2.3rem;
   justify-content: center;
-  flex-grow: 1;
   align-items: center;
+  padding: 1rem;
 }
 
-#selectCharacter--inputTooLong_p{
-  margin:0;
+#selectCharacter--inputTooLong_p {
+  margin: 0;
   padding: 0;
 }
 
-
-button{
+button {
   font-family: SequentialistBB;
 }
 
-
-#imagelist--container{
+#imagelist--container {
   background-color: #050505d4;
   padding: 1rem;
 }
 
-.imagelist--items  img{
-  border: 0.1rem solid white
+.imagelist--items img {
+  border: 0.1rem solid white;
 }
 
-
-.container--CharacterCard_main{
+.container--CharacterCard_main {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  align-items: center;
   overflow: hidden;
-  width: 32rem;
-  height: 39rem;
   position: relative;
-  
+  padding-top: 4rem;
 
+  flex: 1;
 }
 
-#p--characterCard_default-id{
+.container--CharacterCard_main img {
+  /* width: 430px; */
+  height: 530px;
+  object-fit: contain;
+}
+
+#placeholderdiv {
+  width: 500px;
+  height: 530px;
+}
+
+#p--characterCard_default-id {
   text-align: center;
-  font-size: 4rem;
+  font-size: 2rem;
   margin: 0;
   font-weight: bold;
-  position:absolute;
-  top:0;
-  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  position: absolute;
+  top: 0;
+  -webkit-text-fill-color: white;
   -webkit-text-stroke-width: 0.1px;
   -webkit-text-stroke-color: black;
-  filter: drop-shadow(16px 30px 30px #000000) ;
+  filter: drop-shadow(16px 30px 30px #000000);
   z-index: 1;
 }
 
-#p--characterCard_clicked-id{
+#p--characterCard_clicked-id {
   position: absolute;
   bottom: 0;
   text-align: center;
-  font-size: 5.1rem;
+  font-size: 3rem;
   margin: 0;
   font-weight: bold;
-  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-fill-color: white;
   -webkit-text-stroke-width: 0.1px;
   -webkit-text-stroke-color: black;
-  filter: drop-shadow(16px 30px 30px #000000) ;
-  z-index: 1;
+  filter: drop-shadow(16px 30px 30px #000000);
+  z-index: 3;
 }
 
-.container--CharacterCard_main > img{
-  max-width:100%;
-  max-height:100%;
-  object-fit: contain;
+#img--characterCard_clicked-id {
+  width: auto;
+  position: relative;
+  z-index: 2;
 }
-
-#img--characterCard_clicked-id{
-  max-width:90%;
-  max-height:90%;
-  object-fit: contain;
-}
-
-
-
 
 .img--filter_first {
-  filter: drop-shadow(16px 16px 40px #652269) ;
+  background: radial-gradient(
+    circle,
+    rgba(101, 34, 105, 1) 0%,
+    rgba(18, 17, 18, 0) 60%
+  );
 }
 .img--filter_second {
-  filter: drop-shadow(16px 16px 40px #4dcec8);
+  background: radial-gradient(
+    circle,
+    rgba(77, 206, 200, 1) 0%,
+    rgba(18, 17, 18, 0) 60%
+  );
 }
 .img--filter_third {
-  filter: drop-shadow(16px 16px 40px #2ebe66) ;
+  background: radial-gradient(
+    circle,
+    rgba(46, 190, 102, 1) 0%,
+    rgba(18, 17, 18, 0) 60%
+  );
 }
 .img--filter_fourth {
-  filter: drop-shadow(16px 16px 40px #fafd6d) ;
+  background: radial-gradient(
+    circle,
+    rgba(250, 253, 109, 1) 0%,
+    rgba(18, 17, 18, 0) 60%
+  );
 }
 .img--filter_fifth {
-  filter: none ;
+  background: none;
 }
-
-
-
-
 
 #bubble-container {
   position: absolute;
   top: 1rem;
-  right: 1rem;
+  z-index: 1;
 }
+
 .bubble {
   position: relative;
-  font-family: sans-serif;
-  font-size: 18px;
-  line-height: 24px;
-  width: 300px;
+  width: 290px;
   background: #fff;
   border-radius: 40px;
-  padding: 24px;
+  padding: 10px;
   text-align: center;
   color: #000;
   word-wrap: break-word;
   font-family: SequentialistBB;
   font-weight: bold;
+  opacity: 1;
+  z-index: 1;
 }
 
 .bubble-bottom-left:before {
@@ -222,46 +197,37 @@ button{
   right: 32px;
   bottom: -24px;
 }
-
-
-
-
-
-/* .container--CharacterCard_main{
-
-  background-color: #2248395c;
-
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+.btnContainer {
   display: flex;
   justify-content: center;
+  gap: 2rem;
+  margin: 2rem;
+}
+.MuiButton-outlined {
+  border: 1px solid white !important;
+  border-radius: 0 !important;
+}
 
-  min-width: 364px;
- 
-} */
-
-  /* background-image: url("../public/images/scenes/cellar.jpg"); */
-   /* height: 552px; */
-
-
-/* .imagelist{
-  display: flex;
-  flex-wrap: wrap;
-} */
-
-
-
-/* Jó ez majd ha nagyon ráérek */
-/* .imageList-item >img:hover {
-  width: 150px;
-  position: absolute;
-  z-index: 1;
-
-} */
-
-
-
-/* szövegbubi */
-
-/* szövegbubi vége */
+@media screen and (min-width: 900px) {
+  #span--title {
+    font-size: 2rem;
+  }
+  .title_svg {
+    width: auto;
+  }
+  .main {
+    display: flex;
+    max-width: 1280px;
+    margin: auto;
+  }
+  #imagelist--container {
+    max-width: 600px;
+  }
+  #p--characterCard_default-id {
+    font-size: 4rem;
+  }
+  .isReadyMain {
+    width: fit-content;
+    margin: auto;
+  }
+}

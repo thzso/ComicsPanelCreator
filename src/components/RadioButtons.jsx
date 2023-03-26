@@ -1,72 +1,72 @@
-
 import Radio from "@mui/material/Radio";
+import { RadioGroup } from "@mui/material";
 
-export default function RadioButtons({getFilterColor}) {
-  
-
+export default function RadioButtons({ setFilterColorClass }) {
   const handleChange = (event) => {
-    
-    getFilterColor(event.target.value)
-  
+    setFilterColorClass(event.target.value);
   };
 
   const controlProps = (item) => ({
-    // checked: selectedValue === item,
     onChange: handleChange,
     value: item,
     name: "color-radio-button-demo",
     inputProps: { "aria-label": item },
   });
-  
 
   return (
     <div>
-      <Radio
-        {...controlProps("img--filter_first")}
-        // value="img--filter_first"
-        sx={{
-          color: "#652269",
-          "&.Mui-checked": {
+      <RadioGroup row>
+        <Radio
+          {...controlProps("img--filter_first")}
+          sx={{
             color: "#652269",
-          },
-        }}
-      />
-      <Radio
-        {...controlProps("img--filter_second")}
-        sx={{
-          color: "#4dcec8",
-          "&.Mui-checked": {
+            "&.Mui-checked": {
+              color: "#652269",
+            },
+            padding: "6px"
+          }}
+        />
+        <Radio
+          {...controlProps("img--filter_second")}
+          sx={{
             color: "#4dcec8",
-          },
-        }}
-      />
-      <Radio
-        {...controlProps("img--filter_third")}
-        sx={{
-          color: "#2ebe66",
-          "&.Mui-checked": {
+            "&.Mui-checked": {
+              color: "#4dcec8",
+            },
+            padding: "6px"
+          }}
+        />
+        <Radio
+          {...controlProps("img--filter_third")}
+          sx={{
             color: "#2ebe66",
-          },
-        }}
-      />
-      <Radio
-        {...controlProps("img--filter_fourth")}
-        sx={{
-          color: "#fafd6d",
-          "&.Mui-checked": {
+            "&.Mui-checked": {
+              color: "#2ebe66",
+            },
+            padding: "6px"
+          }}
+        />
+        <Radio
+          {...controlProps("img--filter_fourth")}
+          sx={{
             color: "#fafd6d",
-          },
-        }}
-      />
-      <Radio
-        {...controlProps("img--filter_fifth")}
-        sx={{
-          color: "#ffffff",
-          "&.Mui-checked": {
+            "&.Mui-checked": {
+              color: "#fafd6d",
+            },
+            padding: "6px"
+          }}
+        />
+        <Radio
+          {...controlProps("img--filter_fifth")}
+          sx={{
             color: "#ffffff",
-          },
-        }}
-      />
+            "&.Mui-checked": {
+              color: "#ffffff",
+            },
+            padding: "6px"
+          }}
+        />
+      </RadioGroup>
     </div>
   );
 }
