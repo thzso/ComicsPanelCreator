@@ -49,7 +49,7 @@ function App() {
           style={{ backgroundImage: `url(${charBckgrUrl})` }}
         >
           {isReady !== true && (
-            <>
+             <>
               <div className="select-char-sheet boxes">
                 <SelectCharacter {...{ setNameOfChar }} />
                 <RadioButtons {...{ setFilterColorClass }} />
@@ -62,10 +62,11 @@ function App() {
                 >
                   Ready
                 </Button>
-              </div>
+                </div>
+                  <Imagelist {...{ setBckgrUrl }} />
+              </>
 
-              <Imagelist {...{ setBckgrUrl }} />
-            </>
+            
           )}
 
           <CharacterCard
@@ -74,12 +75,14 @@ function App() {
         </div>
         {isReady && (
           <div className="btnContainer">
+            <div id="saveBtn">
             <Button
               variant="outlined"
               onClick={() => exportAsImage(exportRef.current, "test")}
             >
               Save
             </Button>
+            </div>
             <Button variant="outlined" onClick={() => {setIsReady(!isReady);setContentOfBubble("")}}>
               Back
             </Button>

@@ -9,7 +9,7 @@ export default function SelectCharacter({ setNameOfChar }) {
 
   return (
     <div>
-    <InputLabel id="selectLabel">Choose Character</InputLabel>
+    <InputLabel id="selectLabel" sx={{color: "white"}}>Choose Character</InputLabel>
       <Select
       defaultValue={""}
       style={{minWidth: 200}}

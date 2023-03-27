@@ -9,7 +9,7 @@ export default function MultilineTextField({ setContentOfBubble }) {
       <TextField
         inputProps={{ maxLength: 45 }}
         id="standard-multiline-flexible"
-        label="text of speech bubble"
+        label="speech bubble text"
         multiline
         maxRows={8}
         onInput={(e) => {

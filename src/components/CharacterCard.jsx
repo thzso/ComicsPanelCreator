@@ -13,7 +13,7 @@ export default function CharacterCard({
             : "container--CharacterCard_main"
         }`}
       >
-        <p
+        {/* <p
           id={
             isReady
               ? "p--characterCard_clicked-id"
@@ -21,8 +21,13 @@ export default function CharacterCard({
           }
         >
           <em>{nameOfChar}</em>
+        </p> */}
+        <p
+          id= "p--characterCard_clicked-id">
+          <em>{nameOfChar}</em>
         </p>
-        {isReady && contentOfBubble !== "" && (
+        {/* {isReady && contentOfBubble !== "" && ( */}
+        {contentOfBubble !== "" && (
           <>
             <div id="bubble-container">
               <div className="bubble bubble-bottom-left">
