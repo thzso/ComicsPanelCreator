@@ -54,47 +54,35 @@ function App() {
                 <SelectCharacter {...{ setNameOfChar }} />
                 <RadioButtons {...{ setFilterColorClass }} />
                 <MultilineTextField {...{ setContentOfBubble }} />
-                {/* <Button
-                  variant="outlined"
-                  onClick={() => {
-                    setIsReady(!isReady);
-                  }}
-                >
-                  Ready
-                </Button> */}
               </div>
               <Imagelist {...{ setBckgrUrl }} />
-           
-          
-          
-          <div id="test">
-            <div id="image-overlay">
-            <div>
-            <Button
-              variant="outlined"
-              onClick={() => {
-                setIsReady(!isReady);
-              }}
-              >
-              Ready
-            </Button>
-            </div>
-            </div>
-          </div>
-          
-          </>
+
+              <div id="ready-panel">
+                <div id="image-overlay">
+                  <div>
+                    <Button
+                      variant="outlined"
+                      onClick={() => {
+                        setIsReady(!isReady);
+                      }}
+                    >
+                      Ready
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </>
           )}
 
-
-
-
-
           <CharacterCard
-            {...{ filterColorClass, nameOfChar, isReady, contentOfBubble,charBckgrUrl }}
+            {...{
+              filterColorClass,
+              nameOfChar,
+              isReady,
+              contentOfBubble,
+              charBckgrUrl,
+            }}
           />
-
-
-
         </div>
         {isReady && (
           <div className="btnContainer">

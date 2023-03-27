@@ -47,14 +47,8 @@ body{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 0.5rem;
-
-
-  /* TEST DIV MIATT: */
- /* flex-wrap: wrap; */
+  margin: 1rem;
  position: relative;
-
- /* annyi rem , amennyi a relative test div magassága!!, ha így marad az imagelist container max widthből kell levenni */
 }
 
 .main > div {
@@ -89,10 +83,6 @@ button {
   background-color: #050505d4;
   padding: 1rem;
 
-
-   /* TEST DIV MIATT: */
-   /* NA ! ez legyen relative a kis méretben , és a main a nagyméretben */
-   /* position: relative; */
 }
 
 .imagelist--items img {
@@ -119,7 +109,6 @@ button {
 }
 
 .container--CharacterCard_main img {
-  /* width: 430px; */
   height: var(--image-height);
   object-fit: contain;
   z-index: 2;
@@ -130,19 +119,7 @@ button {
   height: var(--image-height);
 }
 
-/* #p--characterCard_default-id {
-  text-align: center;
-  font-size: 4rem;
-  margin: 0;
-  font-weight: bold;
-  position: absolute;
-  top: 0;
-  -webkit-text-fill-color: white;
-  -webkit-text-stroke-width: 0.1px;
-  -webkit-text-stroke-color: black;
-  filter: drop-shadow(16px 30px 30px #000000);
-  z-index: 1;
-} */
+
 
 #p--characterCard_clicked-id {
   position: absolute;
@@ -241,17 +218,11 @@ button {
 }
 
 
-#test{
+#ready-panel{
 
-  /* border: 2px solid red; */
   width: 100%;
   position: static;
-
-  
-  /* background: #000000ab; */
-  
   background: url("../public/images/space.jpg");
-  /* border-collapse: collapse;  */
   background-size: cover;
   background-position: bottom;
   
@@ -260,7 +231,6 @@ button {
   display: flex;
   justify-content: center;
   padding: 1rem;
-  /* height: 100%; */
   width: 100%;
   background: rgba(0, 0, 0, 0.67) ;
 }
@@ -274,14 +244,11 @@ button {
   #span--title {
     font-size: 1.5rem;
   }
-  /* .title_svg {
-    width: auto;
-  } */
+
   .main {
     display: flex;
     max-width: 1280px;
     margin: auto;
-    /* TEST DIV miatt; */
     padding-bottom: 5rem;
   }
   #imagelist--container {
@@ -291,17 +258,13 @@ button {
   .isReadyMain {
     width: fit-content;
     margin: auto;
-
-    /* TEST DIV MIATT */
     padding-bottom: 0;
   }
   #saveBtn{
     display: block;
   }
 
-  #test{
-
-    /* border: 2px solid red; */
+  #ready-panel{
     width: 100%;
     position: absolute;
     bottom: 0;
@@ -310,20 +273,13 @@ button {
 
   .container--CharacterCard_main{
     min-width: 400px;
-   
-    /* justify-content: center; */
   }
-  /* .container--CharacterCard_main .characterCard_clicked{
-    margin-bottom: 0;
-  } */
-  .main > div:not(.container--CharacterCard_main) {
-  
-    margin-right: -0.5rem;
 
+  .main > div:not(.container--CharacterCard_main) {
+    margin-right: -0.5rem;
   }
   .main > div {
     margin-bottom:0;
   }
-
 
 }
