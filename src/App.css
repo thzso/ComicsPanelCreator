@@ -18,9 +18,17 @@
   font-weight: 400;
 }
 
+:root{
+  --image-height: 500px;
+}
+
 .App {
   gap: 3rem;
   letter-spacing: 0.2rem;
+}
+body{
+  background:url("../public/images/desktop_bg.jpg") !important;
+  background-size: cover !important;
 }
 
 #header--div {
@@ -44,11 +52,14 @@
 
   /* TEST DIV MIATT: */
  /* flex-wrap: wrap; */
+ position: relative;
+
+ /* annyi rem , amennyi a relative test div magassága!!, ha így marad az imagelist container max widthből kell levenni */
 }
 
 .main > div {
   border: 0.5rem solid rgb(254, 254, 254);
-  border-collapse: collapse;
+  margin-bottom: -0.5rem;
 }
 
 .select-char-sheet {
@@ -89,26 +100,34 @@ button {
 }
 
 .container--CharacterCard_main {
+
+  background-size: cover;
+  position: relative;
+  flex: 1;
+  display: flex;
+
+}
+
+.color-background-char-card{
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
   overflow: hidden;
-  position: relative;
   padding-top: 4rem;
-
-  flex: 1;
+  width: 100%;
 }
 
 .container--CharacterCard_main img {
   /* width: 430px; */
-  height: 530px;
+  height: var(--image-height);
   object-fit: contain;
+  z-index: 2;
 }
 
 #placeholderdiv {
   width: 500px;
-  height: 530px;
+  height: var(--image-height);
 }
 
 /* #p--characterCard_default-id {
@@ -220,42 +239,90 @@ button {
   border: 1px solid white !important;
   border-radius: 0 !important;
 }
-#test2{
-  display: flex;
-  flex-wrap: wrap;
-}
+
 
 #test{
-  width: 50px;
-  height: 30px;
-  border: 2px solid red;
+
+  /* border: 2px solid red; */
   width: 100%;
-  /* position: absolute; */
- 
+  position: static;
+
+  
+  /* background: #000000ab; */
+  
+  background: url("../public/images/space.jpg");
+  /* border-collapse: collapse;  */
+  background-size: cover;
+  background-position: bottom;
+  
+}
+#image-overlay{
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  /* height: 100%; */
+  width: 100%;
+  background: rgba(0, 0, 0, 0.67) ;
+}
+
+
+#image-overlay div{
+  background: black;
 }
 
 @media screen and (min-width: 900px) {
   #span--title {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
-  .title_svg {
+  /* .title_svg {
     width: auto;
-  }
+  } */
   .main {
     display: flex;
     max-width: 1280px;
     margin: auto;
+    /* TEST DIV miatt; */
+    padding-bottom: 5rem;
   }
   #imagelist--container {
-    max-width: 600px;
+    max-width: 520px;
   }
 
   .isReadyMain {
     width: fit-content;
     margin: auto;
+
+    /* TEST DIV MIATT */
+    padding-bottom: 0;
   }
   #saveBtn{
     display: block;
+  }
+
+  #test{
+
+    /* border: 2px solid red; */
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+   
+  }
+
+  .container--CharacterCard_main{
+    min-width: 400px;
+   
+    /* justify-content: center; */
+  }
+  /* .container--CharacterCard_main .characterCard_clicked{
+    margin-bottom: 0;
+  } */
+  .main > div:not(.container--CharacterCard_main) {
+  
+    margin-right: -0.5rem;
+
+  }
+  .main > div {
+    margin-bottom:0;
   }
 
 

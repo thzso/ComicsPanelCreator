@@ -25,8 +25,8 @@ function App() {
   });
 
   const [nameOfChar, setNameOfChar] = useState("");
-  const [charBckgrUrl, setBckgrUrl] = useState("/images/desktop_bg.jpg");
-  const [filterColorClass, setFilterColorClass] = useState(null);
+  const [charBckgrUrl, setBckgrUrl] = useState("/images/space.jpg");
+  const [filterColorClass, setFilterColorClass] = useState("");
   const [isReady, setIsReady] = useState(false);
   const [contentOfBubble, setContentOfBubble] = useState("");
 
@@ -49,41 +49,70 @@ function App() {
           style={{ backgroundImage: `url(${charBckgrUrl})` }}
         >
           {isReady !== true && (
-             <>
+            <>
               <div className="select-char-sheet boxes">
                 <SelectCharacter {...{ setNameOfChar }} />
                 <RadioButtons {...{ setFilterColorClass }} />
                 <MultilineTextField {...{ setContentOfBubble }} />
-                <Button
+                {/* <Button
                   variant="outlined"
                   onClick={() => {
                     setIsReady(!isReady);
                   }}
                 >
                   Ready
-                </Button>
-                </div>
-                  <Imagelist {...{ setBckgrUrl }} />
-              </>
-
-            
+                </Button> */}
+              </div>
+              <Imagelist {...{ setBckgrUrl }} />
+           
+          
+          
+          <div id="test">
+            <div id="image-overlay">
+            <div>
+            <Button
+              variant="outlined"
+              onClick={() => {
+                setIsReady(!isReady);
+              }}
+              >
+              Ready
+            </Button>
+            </div>
+            </div>
+          </div>
+          
+          </>
           )}
 
+
+
+
+
           <CharacterCard
-            {...{ filterColorClass, nameOfChar, isReady, contentOfBubble }}
+            {...{ filterColorClass, nameOfChar, isReady, contentOfBubble,charBckgrUrl }}
           />
+
+
+
         </div>
         {isReady && (
           <div className="btnContainer">
             <div id="saveBtn">
+              <Button
+                variant="outlined"
+                onClick={() => exportAsImage(exportRef.current, "test")}
+              >
+                Save
+              </Button>
+            </div>
             <Button
               variant="outlined"
-              onClick={() => exportAsImage(exportRef.current, "test")}
+              onClick={() => {
+                setIsReady(!isReady);
+                setContentOfBubble("");
+              }}
             >
-              Save
-            </Button>
-            </div>
-            <Button variant="outlined" onClick={() => {setIsReady(!isReady);setContentOfBubble("")}}>
               Back
             </Button>
           </div>

@@ -3,15 +3,22 @@ export default function CharacterCard({
   nameOfChar,
   isReady,
   contentOfBubble,
+  charBckgrUrl,
 }) {
   return (
     <>
       <div
-        className={`${filterColorClass} ${
+        style={{ backgroundImage: `url(${charBckgrUrl})` }}
+        // className={`${filterColorClass} ${
+        //   isReady
+        //     ? "container--CharacterCard_main characterCard_clicked"
+        //     : "container--CharacterCard_main"
+        // }`}
+        className={
           isReady
             ? "container--CharacterCard_main characterCard_clicked"
             : "container--CharacterCard_main"
-        }`}
+        }
       >
         {/* <p
           id={
@@ -22,29 +29,30 @@ export default function CharacterCard({
         >
           <em>{nameOfChar}</em>
         </p> */}
-        <p
-          id= "p--characterCard_clicked-id">
-          <em>{nameOfChar}</em>
-        </p>
-        {/* {isReady && contentOfBubble !== "" && ( */}
-        {contentOfBubble !== "" && (
-          <>
-            <div id="bubble-container">
-              <div className="bubble bubble-bottom-left">
-                <em>{contentOfBubble}</em>
+        <div className={`${filterColorClass} color-background-char-card`}>
+          <p id="p--characterCard_clicked-id">
+            <em>{nameOfChar}</em>
+          </p>
+          {/* {isReady && contentOfBubble !== "" && ( */}
+          {contentOfBubble !== "" && (
+            <>
+              <div id="bubble-container">
+                <div className="bubble bubble-bottom-left">
+                  <em>{contentOfBubble}</em>
+                </div>
               </div>
-            </div>
-          </>
-        )}
+            </>
+          )}
 
-        {nameOfChar !== "" ? (
-          <img
-            id={isReady ? "img--characterCard_clicked-id" : ""}
-            src={`images/${nameOfChar}.png`}
-          />
-        ) : (
-          <div id="placeholderdiv"></div>
-        )}
+          {nameOfChar !== "" ? (
+            <img
+              id={isReady ? "img--characterCard_clicked-id" : ""}
+              src={`images/${nameOfChar}.png`}
+            />
+          ) : (
+            <div id="placeholderdiv"></div>
+          )}
+        </div>
       </div>
     </>
   );
